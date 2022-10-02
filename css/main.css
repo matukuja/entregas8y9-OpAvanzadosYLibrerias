@@ -1,0 +1,195 @@
+/* definicion de animaciones */
+
+@keyframes animacionLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#contenedorPrincipal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#contenedorFormularios {
+    padding-right: 15%;
+    padding-top: 1%;
+    width: 50%;
+}
+
+#contenedorDatosAdicionales {
+    margin-top: 2rem;
+}
+
+#vidrieraPedidos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedorResultados {
+    width: 50%;
+    padding-left: 1%;
+    padding-top: 1.1%;
+    padding-right: 1%;
+}
+
+#formDatosPersonales,
+#formPedidos,
+#formDatosAdicionales {
+    border-style: dashed;
+    border-width: 1px;
+    padding: 1rem;
+}
+
+#datosCarrito h3 {
+    font-size: 1.2rem;
+}
+
+#contenedorResultados h2 {
+    font-size: 1.6rem;
+}
+
+form button {
+    margin-top: 0.5rem;
+}
+
+#mensajeFinal {
+    font-size: 1.3rem;
+    color: rgb(225, 140, 3);
+}
+
+.contenedorInputNombre,
+.contenedorInputApellido,
+.contenedorInputDocumento,
+.contenedorInputTelContacto {
+    width: 48%
+}
+
+#formDatosPersonales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#contenedorFormCargaPedidos {
+    margin-top: 1rem;
+}
+
+#leyendaCarritoVacio {
+    color: red;
+}
+
+.lineaSeparadora {
+    width: 50%;
+}
+
+#datosCarrito {
+    margin-top: 2rem;
+}
+
+.botonQuitarDelCarrito {
+    margin-top: 1rem;
+}
+
+.botonSumarYRestar {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: bold;
+}
+
+.personalizacionCard {
+    text-align: center;
+}
+
+.tituloCards {
+    margin-top: 0.5rem;
+}
+
+.ajustesNavBarBootstrap {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    align-items: center;
+}
+
+.ajustesULHeader {
+    align-items: center;
+}
+
+.ajustesULHeader li {
+    padding-left: 2rem;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo:hover {
+    animation-name: animacionLogo;
+    animation-duration: 1.5s;
+}
+
+#desloguearUsuario {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    font-weight: 500;
+}
+
+#resetearEcommerce {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+#leyendaBienvenida {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.toastConfirmacion {
+    background: green;
+}
+
+@media (max-width:768px) {
+    #contenedorPrincipal {
+        flex-direction: column;
+        align-items: center;
+    }
+    #contenedorFormularios {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        padding-top: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+    #contenedorResultados {
+        width: 100%;
+        text-align: center;
+    }
+    #botonIngresoUsuario {
+        margin-top: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ajustesULHeader {
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+    .ajustesULHeader li {
+        padding-left: 0.1rem;
+    }
+    #itemNavBarUsuario {
+        margin-top: 1rem;
+    }
+    .lineaSeparadora {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- mi CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Entrega 2 Proyecto Final - Curso JavaScript</title>
+</head>
+
+<body>
+    <!-- Contenedor principal con las dos secciones más importantes: Resultados + Formularios de carga -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid ajustesNavBarBootstrap">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="img/logo2.png" alt="Logo de Deportelandia - Imanes y llaveros de fútbol">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ajustesULHeader">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-warning" id="resetearEcommerce">Reiniciar ecommerce</button>
+                        </li>
+                        <li class="nav-item" id="itemNavBarUsuario" hidden>
+                            <h6 id="leyendaBienvenida"></h6>
+                            <a href="#" class="btn btn-danger" id="desloguearUsuario">Desloguearse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="contenedorPrincipal">
+        <!-- Inicio del contenedor en donde se muestran los resultados -->
+        <div id="contenedorResultados">
+            <!-- Acá se muestran dinámicamente los pedidos que el usuario ingrese al carrito -->
+            <h2>Visualizador de pedidos</h2>
+            <h6 id="leyendaCarritoVacio">Carrito vacío</h6>
+            <div id="vidrieraPedidos">
+
+            </div>
+            <!-- Acá aparecen los resultados de la compra cuando el usuario decida apretar en "finalizar compra" -->
+            <hr class="lineaSeparadora">
+            <div id="datosCarrito">
+                <h3>Resumen del carrito:</h3>
+                <div id="resumenCarrito"></div>
+                <h3>Valores del carrito:</h3>
+                <div id="valoresCarrito"></div>
+                <h3 id="subTotalCarrito">Subtotal:</h3>
+                <h3 id="cuotasCarrito">Cantidad de cuotas elegidas:</h3>
+                <h3 id="recargoCuotasCarrito">Recargo por las cuotas elegidas:</h3>
+                <h3 id="valorTotalCarrito">Total a abonar:</h3>
+                <h3 id="valorPorCuota">Total a abonar por cuota:</h3>
+            </div>
+        </div>
+
+        <!-- Inicio del contenedor en donde se muestran los formularios para que el usuario ingrese información -->
+        <div id="contenedorFormularios">
+            <div id="contenedorFormDatosPersonales">
+                <h5>Registrate:</h5>
+                <form id="formDatosPersonales">
+                    <div class="contenedorInputNombre form-group">
+                        <label for="inputNombre">Ingresá tu nombre</label>
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                    </div>
+                    <div class="contenedorInputApellido form-group">
+                        <label for="inputApellido">Ingresá tu apellido</label>
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                    </div>
+                    <div class="contenedorInputDocumento form-group">
+                        <label for="inputDocumento">Ingresá tu documento</label>
+                        <input type="text" class="form-control" id="inputDocumento" placeholder="Documento">
+                    </div>
+                    <div class="contenedorInputTelContacto form-group">
+                        <label for="inputTelContacto">Telefono de contacto:</label>
+                        <input type="text" class="form-control" id="inputTelContacto" placeholder="tel de contacto">
+                    </div>
+                    <button type="submit" class="btn btn-success" id="botonIngresoUsuario">Ingresar</button>
+                </form>
+            </div>
+            <div id="contenedorFormCargaPedidos">
+                <h5>Form para agregar pedido al carrito:</h5>
+                <!-- formulario en donde el cliente carga los pedidos en el carrito -->
+                <form id="formPedidos">
+                    <div class="form-group">
+                        <label for="selectorEquipo">Elegí el equipo</label>
+                        <select class="form-control" id="selectorEquipo">
+                          <option>Boca Juniors</option>
+                          <option>River Plate</option>
+                          <option>San Lorenzo</option>
+                          <option>Independiente</option>
+                          <option>Racing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectorTipoProducto">Elegí el tipo de producto</label>
+                        <select class="form-control" id="selectorTipoProducto">
+                          <option>Imanes</option>
+                          <option>Llaveros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCantidad">Cantidad de unidades</label>
+                        <input type="text" class="form-control" id="inputCantidad" placeholder="ingresá las unidades a encargar">
+                    </div>
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="reset" class="btn btn-primary">Resetear form</button> </form>
+            </div>
+            <div id="contenedorDatosAdicionales" hidden>
+                <h5>Datos clientes y cuotas:</h5>
+                <!-- formulario en donde el cliente especifica sus datos personales, de envio y las cuotas con las que quiere pagar -->
+                <form id="formDatosAdicionales">
+                    <div class="form-group">
+                        <label for="inputDireccion">Dirección de envio:</label>
+                        <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+                    </div>
+                    <div class="form-group">
+                        <label for="selectorCuotas">Elegí las cuotas</label>
+                        <select class="form-control" id="selectorCuotas">
+                              <option>1</option>
+                              <option>3</option>
+                              <option>6</option>
+                              <option>12</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Confirmar compra</button>
+                    <button type="reset" class="btn btn-primary">Resetear form</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Librería Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Librería Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Mi Script -->
+    <script src="js/operadores-avanzados-y-librerias.js"></script>
+</body>
+
+</html>
